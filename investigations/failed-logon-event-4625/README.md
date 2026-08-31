@@ -130,3 +130,25 @@ Future improvements to the lab will include:
 - Correlating Event IDs 4625, 4771 and 4776
 - Creating custom Wazuh detection rules
 - Mapping detections to MITRE ATT&CK
+
+
+## Evidence
+
+### Wazuh detection rule
+
+![Wazuh Rule 60122](Rule.id_60122.jpg)
+
+Wazuh detected the failed authentication event using rule `60122`, classified as:
+
+`Logon Failure - Unknown user or bad password`
+
+### Windows authentication status
+
+![Windows authentication Status and SubStatus](Status_SubStatus.jpg)
+
+The event returned:
+
+- Status: `0xC000006D` — Logon failure
+- SubStatus: `0xC0000064` — User account does not exist
+
+These fields confirmed that the authentication attempt used a non-existent username.
