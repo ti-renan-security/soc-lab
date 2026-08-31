@@ -16,6 +16,24 @@ This lab is designed to develop practical skills in:
 - Windows event analysis
 - Defensive security
 
+## SOC Investigations
+
+### Windows Failed Logon — Event ID 4625
+
+Investigation of repeated failed Windows authentication attempts detected using Wazuh.
+
+**Topics covered:**
+
+- Windows Security Event ID 4625
+- Wazuh Rule 60122
+- Interactive logon analysis
+- Authentication Status and SubStatus
+- Repeated failed authentication correlation
+- Basic SOC triage
+- MITRE ATT&CK context
+
+➡️ [View the full investigation](investigations/failed-logon-event-4625/)
+
 ## Lab Environment
 
 The environment includes:
