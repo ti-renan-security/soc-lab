@@ -152,3 +152,19 @@ The event returned:
 - SubStatus: `0xC0000064` — User account does not exist
 
 These fields confirmed that the authentication attempt used a non-existent username.
+
+### Repeated failed authentication attempts
+
+![Repeated failed logon attempts](Repeated_Failed_Logons_60122.jpg)
+
+Seven failed authentication events were detected on CLIENT01 using Wazuh rule `60122`.
+
+The repeated events demonstrate how multiple authentication failures can be identified and correlated during a SOC investigation.
+
+Although this activity was intentionally generated in the lab, similar patterns in a production environment could indicate:
+
+- Brute-force attempts
+- Account enumeration
+- Password spraying
+- Misconfigured applications
+- Unauthorized authentication activity
