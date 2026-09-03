@@ -20,19 +20,40 @@ This lab is designed to develop practical skills in:
 
 ### Windows Failed Logon — Event ID 4625
 
-Investigation of repeated failed Windows authentication attempts detected using Wazuh.
+Investigation of failed Windows logon attempts collected by Wazuh from `CLIENT01`.
 
-**Topics covered:**
+The exercise covered:
 
 - Windows Security Event ID 4625
-- Wazuh Rule 60122
-- Interactive logon analysis
-- Authentication Status and SubStatus
-- Repeated failed authentication correlation
-- Basic SOC triage
-- MITRE ATT&CK context
+- Failed interactive logon analysis
+- Wazuh Rule ID 60122
+- Authentication failure status codes
+- Repeated failed logon detection
+- SOC triage and event interpretation
 
-➡️ [View the full investigation](investigations/failed-logon-event-4625/)
+[View investigation](investigations/failed-logon-event-4625/)
+
+---
+
+### Domain Credential Validation Failure — Event ID 4776
+
+Investigation of failed Active Directory credential validation attempts generated from `CLIENT01` and processed by the Domain Controller `NTS-YTO-AD01`.
+
+The exercise covered:
+
+- Windows Security Event ID 4776
+- Active Directory credential validation
+- Status code `0xC000006A`
+- Windows Advanced Audit Policy
+- Wazuh EventChannel collection
+- Analysis of Wazuh default Rule ID 60104
+- Creation of custom Wazuh Rule ID 100100
+- Level 7 SIEM alert
+- Wazuh Threat Hunting validation
+- MITRE ATT&CK T1110 contextual mapping
+- SOC authentication-event analysis
+
+[View investigation](investigations/domain-credential-validation-4776/)
 
 ## Lab Environment
 
