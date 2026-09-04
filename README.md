@@ -15,6 +15,8 @@ This lab is designed to develop practical skills in:
 - Threat investigation
 - Windows event analysis
 - Defensive security
+- Detection engineering
+- MITRE ATT&CK mapping
 
 ## SOC Investigations
 
@@ -55,51 +57,88 @@ The exercise covered:
 
 [View investigation](investigations/domain-credential-validation-4776/)
 
+---
+
+### Brute Force Followed by Successful Logon — Correlated Detection
+
+Custom Wazuh detection engineering use case that correlates repeated Windows authentication failures for the same account with a later successful logon.
+
+The exercise covered:
+
+- Windows Security Event IDs `4625` and `4624`
+- Windows Logon Types `2`, `7`, and `11`
+- Custom Wazuh Rules `100102`, `100103`, and `100104`
+- Same-user correlation with `same_field`
+- Time-based correlation using `frequency` and `timeframe`
+- Level 10 possible brute-force alert
+- Level 12 successful-logon-after-brute-force alert
+- Identity normalization between UPN and NetBIOS username formats
+- Alert-noise reduction and duplicate suppression by refining Logon Types
+- MITRE ATT&CK `T1110 — Brute Force`
+- MITRE ATT&CK `T1078 — Valid Accounts`
+- SOC Tier 1 triage workflow
+
+[View investigation](investigations/brute-force-successful-logon/)
+
 ## Lab Environment
 
 The environment includes:
 
-- Windows endpoint
-- Wazuh SIEM / security monitoring
+- Windows endpoint (`CLIENT01`)
+- Active Directory Domain Controller (`NTS-YTO-AD01`)
+- Wazuh SIEM / security monitoring (`sec-wazuh01`)
 - pfSense firewall
-- Virtualized lab environment
+- Segmented virtual network
 - Network traffic monitoring
 - Security logs and alerts
 
 ## Activities
 
-The lab will include practical exercises such as:
+The lab includes practical exercises such as:
 
 - Monitoring Windows authentication events
 - Investigating failed login attempts
 - Analyzing security alerts
+- Creating and validating custom Wazuh rules
+- Correlating events into higher-confidence detections
 - Reviewing firewall and network logs
 - Simulating controlled suspicious activity
 - Identifying Indicators of Compromise (IOCs)
+- Mapping detections to MITRE ATT&CK
+- Performing SOC Tier 1 triage
+- Reducing false positives and alert fatigue
 - Documenting incident investigation steps
-- Creating basic incident response reports
 
 ## Tools
 
 - Wazuh
 - pfSense
 - Windows Event Viewer
+- Active Directory
 - Wireshark
-- Virtualization
+- VMware virtualization
+- Windows Terminal / SSH
 - TCP/IP
 - Security logs
 
 ## Project Roadmap
 
-- [ ] Build and document lab architecture
-- [ ] Configure Wazuh monitoring
-- [ ] Connect Windows endpoint to Wazuh
-- [ ] Configure pfSense firewall
-- [ ] Generate and analyze authentication events
-- [ ] Investigate suspicious login activity
+- [x] Build initial lab architecture
+- [x] Configure Wazuh monitoring
+- [x] Connect Windows endpoint to Wazuh
+- [x] Configure pfSense network segmentation
+- [x] Generate and analyze Windows authentication events
+- [x] Investigate Event ID 4625 failed logons
+- [x] Investigate Event ID 4776 domain credential validation failures
+- [x] Create custom Wazuh authentication rules
+- [x] Build brute-force correlation for the same user
+- [x] Correlate brute force with a subsequent successful logon
+- [x] Map detections to MITRE ATT&CK T1110 and T1078
+- [x] Validate detections in Wazuh Threat Hunting
 - [ ] Analyze network traffic with Wireshark
-- [ ] Document first security incident investigation
-- [ ] Map detections to MITRE ATT&CK techniques
+- [ ] Add pfSense firewall-focused detection use cases
+- [ ] Build additional SOC investigation playbooks
+- [ ] Expand incident-response documentation
 
 ## Disclaimer
 
