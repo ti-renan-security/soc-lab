@@ -80,6 +80,27 @@ The exercise covered:
 
 [View investigation](investigations/brute-force-successful-logon/)
 
+---
+
+### Sysmon Event ID 3 — PowerShell Network Connection Investigation
+
+Detection-engineering and troubleshooting exercise focused on outbound network connections initiated by PowerShell and collected through Sysmon Event ID 3.
+
+The exercise covered:
+
+- Enabling Sysmon NetworkConnect telemetry
+- Filtering Event ID 3 for `powershell.exe`
+- Generating controlled HTTPS traffic with PowerShell
+- Validating source IP, destination IP, protocol and destination port
+- Confirming raw ingestion in Wazuh `archives.json`
+- Reviewing native Wazuh rule `61605` and group `sysmon_event3`
+- Building and troubleshooting custom rule `100202`
+- Separating telemetry collection from alert generation
+- Documenting a detection that did not trigger despite healthy raw-event ingestion
+- MITRE ATT&CK `T1059.001 — PowerShell` context
+
+[View investigation](investigations/sysmon-event3-powershell-network/)
+
 ## Lab Environment
 
 The environment includes:
@@ -135,6 +156,9 @@ The lab includes practical exercises such as:
 - [x] Correlate brute force with a subsequent successful logon
 - [x] Map detections to MITRE ATT&CK T1110 and T1078
 - [x] Validate detections in Wazuh Threat Hunting
+- [x] Enable and validate Sysmon Event ID 3 network telemetry
+- [x] Document PowerShell network-connection troubleshooting in Wazuh
+- [ ] Investigate Sysmon Event ID 11 file creation
 - [ ] Analyze network traffic with Wireshark
 - [ ] Add pfSense firewall-focused detection use cases
 - [ ] Build additional SOC investigation playbooks
