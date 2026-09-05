@@ -125,6 +125,29 @@ The exercise covered:
 
 [View investigation](investigations/powershell-file-creation-execution-correlation/)
 
+---
+
+### Scheduled Task Persistence and SYSTEM Execution — Correlated Detection
+
+Persistence-focused detection engineering use case that correlates scheduled-task creation with later execution of the same task and confirms the resulting process execution as `NT AUTHORITY\SYSTEM` through Sysmon.
+
+The exercise covered:
+
+- Windows Task Scheduler Operational telemetry
+- Event IDs `106`, `129`, `200`, `201`, and `102`
+- Native Wazuh Rule `67014`
+- Custom Wazuh Rules `100300`, `100301`, `100302`, and `100303`
+- Same-task correlation using `win.eventdata.taskName`
+- PID correlation between Task Scheduler Event ID `129` and Sysmon Event ID `1`
+- Detection of `svchost.exe -s Schedule` as the parent service
+- Process execution as `NT AUTHORITY\SYSTEM`
+- High-integrity execution context analysis
+- Progressive severity from Level 7/8 to Level 12 and Level 14
+- MITRE ATT&CK `T1053.005 — Scheduled Task`
+- SOC investigation and benign true-positive disposition
+
+[View investigation](investigations/scheduled-task-persistence-system-execution/)
+
 ## Lab Environment
 
 The environment includes:
@@ -188,6 +211,12 @@ The lab includes practical exercises such as:
 - [x] Correlate suspicious file creation with PowerShell script execution
 - [x] Add same-user and temporary-path enrichment to correlated detections
 - [x] Validate Level 14 high-confidence PowerShell alert in Wazuh Threat Hunting
+- [x] Collect Windows Task Scheduler Operational telemetry
+- [x] Detect scheduled-task creation and process launch events
+- [x] Correlate creation and execution of the same scheduled task
+- [x] Link Task Scheduler PID telemetry with Sysmon Event ID 1
+- [x] Detect Task Scheduler process execution as NT AUTHORITY\\SYSTEM
+- [x] Validate Level 14 Scheduled Task persistence alert in Wazuh Threat Hunting
 - [ ] Analyze network traffic with Wireshark
 - [ ] Add pfSense firewall-focused detection use cases
 - [ ] Build additional SOC investigation playbooks
