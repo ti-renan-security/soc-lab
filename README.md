@@ -101,6 +101,30 @@ The exercise covered:
 
 [View investigation](investigations/sysmon-event3-powershell-network/)
 
+---
+
+### PowerShell File Creation and Execution — Correlated Detection
+
+Behavioral detection engineering use case that correlates suspicious file creation with later PowerShell script execution using `ExecutionPolicy Bypass`.
+
+The exercise covered:
+
+- Enabling and validating Sysmon Event ID `11 — File Create`
+- Correlating Sysmon Event IDs `11` and `1`
+- Native Wazuh rules `61613` and `92028`
+- Custom Wazuh Rules `100203`, `100204`, `100205`, `100206`, and `100207`
+- File-extension-based detection enrichment
+- Safe file triage using SHA256, file size, content inspection, and PE `MZ` header validation
+- Same-user correlation with `same_field`
+- Time-based correlation using `frequency` and `timeframe`
+- Detection of `ExecutionPolicy Bypass`
+- High-confidence execution from a temporary directory
+- Progressive severity from Level 8 to Level 14
+- MITRE ATT&CK `T1059.001 — PowerShell`
+- SOC investigation and benign true-positive disposition
+
+[View investigation](investigations/powershell-file-creation-execution-correlation/)
+
 ## Lab Environment
 
 The environment includes:
@@ -133,6 +157,7 @@ The lab includes practical exercises such as:
 ## Tools
 
 - Wazuh
+- Sysmon
 - pfSense
 - Windows Event Viewer
 - Active Directory
@@ -158,7 +183,11 @@ The lab includes practical exercises such as:
 - [x] Validate detections in Wazuh Threat Hunting
 - [x] Enable and validate Sysmon Event ID 3 network telemetry
 - [x] Document PowerShell network-connection troubleshooting in Wazuh
-- [ ] Investigate Sysmon Event ID 11 file creation
+- [x] Enable and investigate Sysmon Event ID 11 file creation
+- [x] Build PowerShell suspicious-file creation detection
+- [x] Correlate suspicious file creation with PowerShell script execution
+- [x] Add same-user and temporary-path enrichment to correlated detections
+- [x] Validate Level 14 high-confidence PowerShell alert in Wazuh Threat Hunting
 - [ ] Analyze network traffic with Wireshark
 - [ ] Add pfSense firewall-focused detection use cases
 - [ ] Build additional SOC investigation playbooks
