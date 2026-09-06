@@ -84,19 +84,25 @@ The exercise covered:
 
 ### Sysmon Event ID 3 — PowerShell Network Connection Investigation
 
-Detection-engineering and troubleshooting exercise focused on outbound network connections initiated by PowerShell and collected through Sysmon Event ID 3.
+Endpoint-to-network investigation correlating PowerShell network telemetry across Sysmon, pfSense, Wireshark and Wazuh.
 
 The exercise covered:
 
-- Enabling Sysmon NetworkConnect telemetry
-- Filtering Event ID 3 for `powershell.exe`
+- Enabling Sysmon NetworkConnect telemetry for `powershell.exe`
 - Generating controlled HTTPS traffic with PowerShell
-- Validating source IP, destination IP, protocol and destination port
+- Capturing `CLIENT01` traffic on the pfSense LAN interface
+- Analyzing TCP three-way handshake in Wireshark
+- Inspecting TLS 1.3 `Client Hello` and `Server Hello`
+- Identifying SNI `example.com`
+- Identifying selected cipher suite `TLS_AES_256_GCM_SHA384`
+- Using `Follow TCP Stream` and `Statistics → Conversations`
+- Correlating the same session by source IP, source port, destination IP and destination port
+- Attributing the network session to `powershell.exe` with Sysmon Event ID 3
 - Confirming raw ingestion in Wazuh `archives.json`
-- Reviewing native Wazuh rule `61605` and group `sysmon_event3`
+- Reviewing native Wazuh rules `60004`, `61600`, and `61605`
 - Building and troubleshooting custom rule `100202`
-- Separating telemetry collection from alert generation
-- Documenting a detection that did not trigger despite healthy raw-event ingestion
+- Validating rule `100202` with `wazuh-logtest`
+- Documenting a live-alert limitation despite healthy telemetry and successful rule-engine validation
 - MITRE ATT&CK `T1059.001 — PowerShell` context
 
 [View investigation](investigations/sysmon-event3-powershell-network/)
@@ -205,7 +211,12 @@ The lab includes practical exercises such as:
 - [x] Map detections to MITRE ATT&CK T1110 and T1078
 - [x] Validate detections in Wazuh Threat Hunting
 - [x] Enable and validate Sysmon Event ID 3 network telemetry
-- [x] Document PowerShell network-connection troubleshooting in Wazuh
+- [x] Capture CLIENT01 HTTPS traffic through pfSense
+- [x] Analyze TCP and TLS traffic with Wireshark
+- [x] Correlate Wireshark session metadata with Sysmon Event ID 3
+- [x] Validate Wazuh ingestion of the same network telemetry
+- [x] Validate custom Event ID 3 rule logic with wazuh-logtest
+- [x] Document live-alert limitation for Sysmon Event ID 3
 - [x] Enable and investigate Sysmon Event ID 11 file creation
 - [x] Build PowerShell suspicious-file creation detection
 - [x] Correlate suspicious file creation with PowerShell script execution
@@ -217,8 +228,8 @@ The lab includes practical exercises such as:
 - [x] Link Task Scheduler PID telemetry with Sysmon Event ID 1
 - [x] Detect Task Scheduler process execution as NT AUTHORITY\\SYSTEM
 - [x] Validate Level 14 Scheduled Task persistence alert in Wazuh Threat Hunting
-- [ ] Analyze network traffic with Wireshark
 - [ ] Add pfSense firewall-focused detection use cases
+- [ ] Build controlled beaconing / periodic network-traffic investigation
 - [ ] Build additional SOC investigation playbooks
 - [ ] Expand incident-response documentation
 
