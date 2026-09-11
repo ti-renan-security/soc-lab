@@ -59,6 +59,27 @@ The exercise covered:
 
 ---
 
+### Domain Credential Brute Force Correlation — Event ID 4776
+
+Custom Wazuh correlation use case that elevates repeated Active Directory credential validation failures into a Level 10 possible brute-force alert.
+
+The exercise covered:
+
+- Windows Security Event ID `4776`
+- Status `0xC000006A` — valid user / incorrect password
+- Base custom Rule `100100`
+- Correlated custom Rule `100101`
+- Frequency/timeframe correlation
+- Level 10 alert validation in Wazuh Threat Hunting
+- MITRE ATT&CK `T1110 — Brute Force`
+- Credential Access tactic
+- Correlation troubleshooting and threshold tuning
+- Production-tuning limitations and false-positive considerations
+
+[View investigation](investigations/domain-credential-brute-force-4776/)
+
+---
+
 ### Brute Force Followed by Successful Logon — Correlated Detection
 
 Custom Wazuh detection engineering use case that correlates repeated Windows authentication failures for the same account with a later successful logon.
@@ -206,6 +227,7 @@ The lab includes practical exercises such as:
 - [x] Investigate Event ID 4625 failed logons
 - [x] Investigate Event ID 4776 domain credential validation failures
 - [x] Create custom Wazuh authentication rules
+- [x] Build Event ID 4776 brute-force correlation (Rule 100101)
 - [x] Build brute-force correlation for the same user
 - [x] Correlate brute force with a subsequent successful logon
 - [x] Map detections to MITRE ATT&CK T1110 and T1078
