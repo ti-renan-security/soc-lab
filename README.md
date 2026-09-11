@@ -116,7 +116,7 @@ The exercise covered:
 - Inspecting TLS handshake metadata with Wireshark
 - Identifying SNI values in TLS ClientHello traffic
 - Reviewing offered and negotiated cipher suites
-- - Using `Follow TCP Stream` and `Statistics → Conversations`
+- Using `Follow TCP Stream` and `Statistics → Conversations`
 - Correlating the same session by source IP, source port, destination IP and destination port
 - Attributing the network session to `powershell.exe` with Sysmon Event ID 3
 - Confirming raw ingestion in Wazuh `archives.json`
