@@ -113,10 +113,9 @@ The exercise covered:
 - Generating controlled HTTPS traffic with PowerShell
 - Capturing `CLIENT01` traffic on the pfSense LAN interface
 - Analyzing TCP three-way handshake in Wireshark
-- Inspecting TLS 1.3 `Client Hello` and `Server Hello`
-- Identifying SNI `example.com`
-- Identifying selected cipher suite `TLS_AES_256_GCM_SHA384`
-- Using `Follow TCP Stream` and `Statistics → Conversations`
+- Inspecting TLS handshake metadata with Wireshark
+- Identifying SNI values in TLS ClientHello traffic
+- Reviewing offered and negotiated cipher suites- Using `Follow TCP Stream` and `Statistics → Conversations`
 - Correlating the same session by source IP, source port, destination IP and destination port
 - Attributing the network session to `powershell.exe` with Sysmon Event ID 3
 - Confirming raw ingestion in Wazuh `archives.json`
