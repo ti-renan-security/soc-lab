@@ -448,6 +448,32 @@ Wazuh archives.json
 Rule-engine validation with wazuh-logtest
 ```
 
+## Additional TLS ClientHello Evidence
+
+A separate HTTPS capture was reviewed to reinforce TLS-handshake analysis skills.
+
+The Wireshark evidence showed:
+
+- TLS handshake traffic from `CLIENT01`.
+- A TLS `Client Hello`.
+- SNI value `openai.com` in the captured ClientHello.
+- The offered cipher-suite list.
+- TLS 1.3 handshake framing with the compatibility legacy-version field visible in the ClientHello details.
+
+### ClientHello and SNI
+
+![TLS ClientHello SNI openai.com](tls-clienthello-sni-openai.jpg)
+
+### ClientHello Details
+
+![TLS ClientHello details](tls-clienthello-details-openai.jpg)
+
+### Offered Cipher Suites
+
+![TLS offered cipher suites](tls-cipher-suites.jpg)
+
+This additional exercise reinforces an important SOC/network-analysis concept: even when HTTPS payloads are encrypted, handshake metadata can still provide useful investigative context such as destination domain information and cryptographic negotiation details.
+
 ## Disclaimer
 
 This exercise was performed exclusively in a controlled cybersecurity laboratory for educational and defensive security purposes.
