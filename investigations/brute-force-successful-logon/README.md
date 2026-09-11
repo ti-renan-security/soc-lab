@@ -233,6 +233,19 @@ MITRE: T1110, T1078
 - Successful authentication after repeated failures deserves higher-priority investigation.
 - Deduplication and noise reduction are important to prevent alert fatigue.
 
+## Evidence
+
+### Successful Logon After Brute Force — Rule 100104
+
+The Level 12 correlated alert confirms a successful Windows logon after the previously detected brute-force pattern.
+
+![Wazuh Rule 100104 Level 12](rule-100104-level12.jpg)
+
+The alert maps the sequence to:
+
+- `T1110 — Brute Force`
+- `T1078 — Valid Accounts`
+
 ## Defensive Use Only
 
 This exercise was performed in an isolated lab for defensive security training and SOC detection engineering practice.
