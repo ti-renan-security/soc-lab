@@ -1,5 +1,12 @@
 # SOC Lab — Blue Team & Security Monitoring
 
+## Certification
+
+[![CompTIA Security+ ce Certification](https://images.credly.com/images/80d8a06a-c384-42bf-ad36-db81bce5adce/blob)](https://www.credly.com/badges/afc6be46-c53a-4313-b5ca-5bffb832ab66/public_url)
+
+**CompTIA Security+ ce Certification** — verified digital credential issued by CompTIA.  
+[Verify credential on Credly](https://www.credly.com/badges/afc6be46-c53a-4313-b5ca-5bffb832ab66/public_url)
+
 Hands-on cybersecurity lab focused on Security Operations Center (SOC) activities, log analysis, network monitoring, incident detection and defensive security.
 
 ## Objectives
