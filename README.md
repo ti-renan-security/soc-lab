@@ -182,6 +182,27 @@ The exercise covered:
 
 [View investigation](investigations/scheduled-task-persistence-system-execution/)
 
+### PowerShell EncodedCommand and File Creation — Correlated Investigation
+
+SOC investigation of a Base64-encoded PowerShell execution detected by Wazuh and correlated with the resulting Sysmon file-creation event.
+
+The exercise covered:
+
+- PowerShell `-EncodedCommand` execution
+- Sysmon Event ID `1 — Process Create`
+- Native Wazuh Rule `92057` — Level 12
+- UTF-16LE Base64 decoding
+- Sysmon Event ID `11 — File Create`
+- Custom Wazuh Rule `100203` — Level 8
+- Correlation using `ProcessGuid` and `ProcessId`
+- MITRE ATT&CK `T1059.001 — PowerShell`
+- SOC triage from detection through final disposition
+- Benign true-positive classification after payload validation
+
+[View investigation](investigations/powershell-encoded-command-file-creation-correlation/)
+
+---
+
 ## Lab Environment
 
 The environment includes:
@@ -257,6 +278,7 @@ The lab includes practical exercises such as:
 - [x] Link Task Scheduler PID telemetry with Sysmon Event ID 1
 - [x] Detect Task Scheduler process execution as NT AUTHORITY\\SYSTEM
 - [x] Validate Level 14 Scheduled Task persistence alert in Wazuh Threat Hunting
+- [x] Investigate Base64-encoded PowerShell execution and correlate it with Sysmon file creation
 - [ ] Add pfSense firewall-focused detection use cases
 - [ ] Build controlled beaconing / periodic network-traffic investigation
 - [ ] Build additional SOC investigation playbooks
