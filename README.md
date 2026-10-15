@@ -1,4 +1,13 @@
 
+### Microsoft Sentinel — Parent–Child Process Behavioral Baseline (Exercise 4)
+
+Investigated process ancestry, identified Azure Guest Agent components launching console processes, analyzed their hourly recurrence, and assessed command-line audit completeness.
+
+[Read the Exercise 4 case study](investigations/azure-sentinel-parent-child-process-baseline/)
+
+---
+
+
 ### Azure Microsoft Sentinel — PowerShell Threat Hunting & Command-Line Auditing
 
 Investigated Windows Event ID 4688 and PowerShell process ancestry, found a command-line visibility gap, enabled argument auditing, and verified ingestion in Sentinel using a safe test.
