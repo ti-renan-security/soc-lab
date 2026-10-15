@@ -203,6 +203,16 @@ The exercise covered:
 
 ---
 
+
+
+---
+
+### Azure Microsoft Sentinel — Failed RDP Authentication Detection & Incident Response
+
+Azure-hosted Windows Server authentication monitoring with Azure Monitor Agent, Log Analytics, KQL, and Microsoft Sentinel. A controlled test generated Windows Event ID 4625 failures, which were investigated in Microsoft Defender. The test incident was classified as **Benign Positive — Security testing** and resolved. The scheduled analytics rule was returned to its normal five-failure/ten-minute threshold.
+
+[View the Azure Sentinel case study](investigations/azure-sentinel-rdp-failed-logons/)
+
 ## Lab Environment
 
 The environment includes:
