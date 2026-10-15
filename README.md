@@ -213,6 +213,15 @@ Azure-hosted Windows Server authentication monitoring with Azure Monitor Agent, 
 
 [View the Azure Sentinel case study](investigations/azure-sentinel-rdp-failed-logons/)
 
+
+### Azure Microsoft Sentinel — Entity Mapping Validation
+
+Follow-up detection-engineering exercise documenting IP and Host mapping, validation of entities in the Microsoft Defender incident graph, investigation of a controlled authentication test, and incident closure.
+
+[View Entity Mapping case study](investigations/azure-sentinel-entity-mapping/)
+
+---
+
 ## Lab Environment
 
 The environment includes:
