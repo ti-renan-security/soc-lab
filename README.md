@@ -1,3 +1,11 @@
+### Microsoft Sentinel — Authentication Threat Hunting & RDP Hardening (Exercise 5)
+
+Investigated Windows 4624/4625 authentication records, identified repeated account-not-found failures across public source addresses, restricted RDP ingress in Azure NSG, and successfully reconnected after the change.
+
+[Read the Exercise 5 case study](investigations/azure-sentinel-authentication-hunting-rdp-hardening/)
+
+---
+
 
 ### Microsoft Sentinel — Parent–Child Process Behavioral Baseline (Exercise 4)
 
