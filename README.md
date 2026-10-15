@@ -1,3 +1,12 @@
+
+### Azure Microsoft Sentinel — PowerShell Threat Hunting & Command-Line Auditing
+
+Investigated Windows Event ID 4688 and PowerShell process ancestry, found a command-line visibility gap, enabled argument auditing, and verified ingestion in Sentinel using a safe test.
+
+[View PowerShell Threat Hunting case study](investigations/azure-sentinel-powershell-threat-hunting/)
+
+---
+
 # SOC Lab — Blue Team & Security Monitoring
 
 ## Certification
